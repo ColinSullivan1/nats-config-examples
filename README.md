@@ -1,4 +1,4 @@
-# nats-config-examples
+# NATS Configuration Examples
 NATS Configuration Examples
 
 ## Superclusters
