@@ -15,12 +15,12 @@ really differences are IPs or hostnames.
 ## Cluster configuration
 
 This is setup with three regions: region1, region2, and region3.    Each region consists
-of a standard three node NATS supercluster.  Note that one node could have been used,
-but we want to somewhat simulate a production deployment.
+of a standard full mesh three node NATS cluster.  Connectivity between regions are configured
+with gateways to create a supercluster.
 
 Breaking with NATS tradition, ports do not use "22" in them.  Rather than hostnames,
 I'll use ports to differentiate clusters.  In an actual deployment, good practice
-is to use.
+is to standardize on the same port for each node.
 
 ### Ports
 
