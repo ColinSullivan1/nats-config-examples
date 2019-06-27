@@ -1,4 +1,4 @@
-# The Local Supercluster
+# A Local Supercluster
 
 This sets up a completely local supercluster on bare metal for testing, demonstrations,
 etc. It relies ports rather than hostnames to differentiate clusters.  One could add
