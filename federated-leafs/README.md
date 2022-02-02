@@ -5,17 +5,19 @@ This example demonstrates a chain of four leaf nodes.
 ## Setup
 
 For demonstration purposes, here are four servers representing four layers
-of a deployment.  The servers are leafnoded into on another to create
-a hierarchy or chain.  This allows messages to flow as follows:
+of a deployment.  The servers are leafed to create
+a hierarchy or chain.  
+
+This allows messages to flow as follows:
 
 Device -> Edge -> Regionals -> Central
 
 We'll generate data from the device, subscribe on the central,
-and see messages flow.  This is entirely run on a single node,
-so ports will differentiate function.
+and see messages flow across the chain.  This is entirely run on
+a single node (my laptop),so ports will differentiate function.
 
 Note that messages can flow in either direction with this 
-configuration.  Accounts and security can be setup to to restrict
+configuration. Accounts can be setup to to restrict
 data flow.
 
 ## Ports
