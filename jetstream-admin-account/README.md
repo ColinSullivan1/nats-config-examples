@@ -23,7 +23,7 @@ fully administrate JetStream assets.
 In the [simple_js_admin.conf](./simple_js_admin.conf) configuration file,
 notice the export.
 
-```json
+```text
     exports [ { service: "$JS.API.>"} ]
 ```
 
@@ -36,7 +36,7 @@ The admin account imports the $JS.API services and adds a prefix for context. Th
 
 Note the imports with prefixes:
 
-```json
+```text
     imports [
       { service: { account: JETSTREAM_ACCOUNT_A, subject: "$JS.API.>"}, to: "ACCOUNT_A.JS.API.>" },
       { service: { account: JETSTREAM_ACCOUNT_B, subject: "$JS.API.>"}, to: "ACCOUNT_B.JS.API.>" }
