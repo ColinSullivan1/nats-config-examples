@@ -68,18 +68,12 @@ To stop the supercluster (and all servers on your machine) run:
 
 Subscribe to various servers and ensure messages flow...
 
-`nats-sub -creds auth/nkeys/creds/myoperator/myaccount/myuser.creds -s "localhost:5000" foo &`
-`nats-sub -creds auth/nkeys/creds/myoperator/myaccount/myuser.creds -s "localhost:6001" foo &`
+`nats sub --user c_user --password password  -s "localhost:5000" foo &`
+`nats sub --user c_user --password password  -s "localhost:4002" foo &`
+`nats sub --user c_user --password password  -s "localhost:6001" foo &`
 
-`nats-pub -creds auth/nkeys/creds/myoperator/myaccount/myuser.creds -s "localhost:4002" foo hello`
+`nats pub --user c_user --password password  -s "localhost:5001" foo hello`
 
 From here, experiment with queue subs local to and remote from the publisher
 to see how configuration-less DR works.
-
-## Credentials
-
-Credentials used to connect are:
-- User: `auth/nkeys/creds/myoperator/myaccount/myuser.creds`
-- System: `auth/nkeys/creds/myoperator/SYS/SYS.creds`
-
 
