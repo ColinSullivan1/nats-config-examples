@@ -1,4 +1,4 @@
 $!/bin/sh
 
-nats request --creds auth/nkeys/creds/myoperator/myaccount2/myuser.creds foo "hello"
+nats request --creds auth/nscd/myoperator/accounts/myaccount2/users/myuser.jwt foo "hello"
  

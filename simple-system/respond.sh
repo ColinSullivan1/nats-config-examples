@@ -1,4 +1,4 @@
 #!/bin/sh
 
-nats reply --creds auth/nkeys/creds/myoperator/myaccount/myuser.creds foo "hello"
+nats reply --creds  auth/nscd/myoperator/accounts/myaccount/myuser.creds foo "hello"
 
