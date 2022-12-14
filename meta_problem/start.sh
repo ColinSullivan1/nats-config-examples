@@ -1,5 +1,7 @@
 #!/bin/sh
 
+docker network create backbone
+
 cd v0
 docker compose up &
 
