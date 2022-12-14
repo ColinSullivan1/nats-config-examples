@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  n2m1:
+    image: colin/nats-server
+    restart: unless-stopped
+    ports:
+      - "4223:4222"
+    volumes:
+      - ./config:/config
+    command: "--config /config/n2m1.conf"
+    networks:
+      - backbone
+
+  n2m2:
+    image: colin/nats-server
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+    command: "--config /config/n2m2.conf"
+    networks:
+      - backbone
+
+networks:
+  backbone:
+    name: backbone
+

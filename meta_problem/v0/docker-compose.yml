@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  n1m1:
+    image: colin/nats-server
+    restart: unless-stopped
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    volumes:
+      - ./config:/config
+    command: "--config /config/n1m1.conf"
+    networks:
+      - backbone
+
+  n1m2:
+    image: colin/nats-server
+    restart: unless-stopped
+    command: "--config /config/n1m2.conf"
+    volumes:
+      - ./config:/config
+    networks:
+      - backbone
+    depends_on:
+      - n1m1
+
+  n1m3:
+    image: colin/nats-server
+    restart: unless-stopped
+    command: "--config /config/n1m3.conf"
+    volumes:
+      - ./config:/config
+    networks:
+      - backbone
+    depends_on:
+      - n1m1
+
+  nats-cli:
+    image: natsio/nats-box:0.13.2
+    restart: unless-stopped
+    tty: true
+    networks:
+      - backbone
+
+networks:
+  backbone:
+    name: backbone
+
