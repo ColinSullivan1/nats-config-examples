@@ -1,6 +1,11 @@
 # Instructions
 
-From this directory run `./start.sh`
+First, build the docker image which grabs the latest main branch for the NATS server.
+
+`$ cd docker/nats-server`
+`$ build.sh`
+
+Then pop back up to this directory and run `./start.sh`
 
 If it start up OK run `./stop.sh` and repeat until you see:
 
